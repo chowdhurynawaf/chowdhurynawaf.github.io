@@ -8,11 +8,11 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Software Engineer
+designation: iOS Engineer
 # your company information
 company:
-  name: Example Co.
-  url: "https://www.example.com"
+  name: METADESIGN SOLUTIONS.
+  url: "https://metadesignsolutions.com/"
 
 
 # a summary about you
@@ -58,7 +58,7 @@ badges:
 - type: certification
   name: Certified Kubernetes Security Specialist
   url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
-  badge: "https://images.credly.com/size/680x680/images/f4bf92ed-8985-40b2-bc07-2f9308780854/kubernetes-security-specialist-logo-examdev.png"
+  badge: "https://ibb.co.com/F6xvNKB"
 
 - type: certification
   name: Istio and IBM Cloud Kubernetes Service

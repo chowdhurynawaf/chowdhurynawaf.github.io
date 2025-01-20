@@ -1,5 +1,5 @@
 # Copyright Notice
-copyright: © 2020 Copyright.
+copyright: © 2025 Copyright.
 
 # A disclaimer notice for the footer. Make sure you have set "params.footer.disclaimer.enable: true" in your `config.yaml` file.
 disclaimer: "এই থিমটি এমআইটি লাইসেন্সের অধীনে। সুতরাং, আপনি এটি অ-বাণিজ্যিক, বাণিজ্যিক বা ব্যক্তিগত ব্যবহারের জন্য ব্যবহার করতে পারবেন।
@@ -20,5 +20,5 @@ openGraph:
   title: জনের ব্লগ
   type: website
   description: জন ডো এর বাক্তিগত পোর্টফোলিও ও ব্লগ.
-  image: images/author/john.png
+  image: images/author/nawaf.png
   url: https://hugo-toha.github.io
