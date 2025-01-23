@@ -25,10 +25,10 @@ languages:
     languageName: English
     title: "Nawaf's Blog"
     weight: 1
-  bn:
-    languageCode: bn
-    languageName: বাংলা
-    title: জনের ব্লগ
+  jp:
+    languageCode: jp
+    languageName: 日本語
+    title: ナワフのブログ
     weight: 2
 # default language for the content
 defaultContentLanguage: en
@@ -68,7 +68,7 @@ params:
     favicon: /images/site/favicon.png
 
   # GitHub repo of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/chowdhurynawaf/nawaf.github.io
   # Default branch of your Git repo
   gitBranch: main
 
@@ -90,7 +90,7 @@ params:
       services:
         light: true # enable light theme. default "true"
         dark: true # enable dark theme. default "true"
-        default: system # can be either light, dark or system. default "system"
+        default: dark # can be either light, dark or system. default "system"
 
     # Enable and configure portfolio
     portfolio:
@@ -108,14 +108,14 @@ params:
         reddit: true
         whatsapp: true
         email: true
-        # tumblr: true
-        # pocket: true
-        # diaspora: true
-        # mastodon: true
+        tumblr: true
+        pocket: true
+        diaspora: true
+        mastodon: true
 
     # Enable & configure "Notes" features
     notes:
-      enable: true
+      enable: false
 
     # Enable comment feature. There, should be only one of them.
     comment:

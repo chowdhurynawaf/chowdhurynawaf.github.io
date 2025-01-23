@@ -11,63 +11,71 @@ section:
 # Your experiences
 experiences:
 - company:
-    name: Example Co.
-    url: "https://www.example.com"
-    location: Dhaka Branch
-    logo: /images/sections/experiences/company1.jpg
+    name: Metadesign Solutions
+    url: "https://metadesignsolutions.com/"
+    location: Remote, UK
+    logo: /images/sections/experiences/mds.svg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company1.jpg
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    
   positions:
-  - designation: Senior Software Engineer
-    start: Nov 2019
+  - designation: iOS Developer
+    start: April 2022
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
+    - Took ownership, maintained and developed features across two interconnected 12-year-old legacy iOS
+      codebases eyLog and eyParent ensuring seamless integration and functionality between applications.
+    - Collaborated with cross-functional teams to design and implement key features such as the upload queue,
+      custom frameworks, offline observation, add to observation, and the rewrite of the medicine form and
+      accident sheets with signature functionality for both eylog and eyparent apps, using XIBs and Objective-C
+      from scratch.
+    - Conducted thorough code reviews and performance testing, resulting in a 30% improvement in app load
+      times and responsiveness.
 
-  - designation: Junior Software Engineer
-    start: Nov 2017
-    end: Oct 2019
-    responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
+  
 
 - company:
-    name: PreExample Co.
-    url: "https://www.example.com"
-    location: Nowhere
-    logo: /images/sections/experiences/company2.jpg
+    name: Easital technologies Ltd
+    url: "https://easital.com/"
+    location: Dhaka, Bangladesh
+    logo: /images/sections/experiences/eas.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company2.jpg
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    
   positions:
-  - designation: Software Engineer
-    start: March 2016
-    end: May 2017
+  - designation: iOS Developer
+    start: May 2021
+    end: March 2022
     responsibilities:
-    - Write lots of example codes.
-    - Read lots of examples.
-    - See lots of example videos.
+    - Developed a visually striking, high-performance mobile app with seamless user experience that secured $1
+      million in venture capital funding for the startup, driving significant business growth.
 
-- company:
-    name: Intern Counting Company (ICC).
-    url: "https://www.example.com"
-    location: Intern Land
-    logo: /images/sections/experiences/company3.jpg
-    # Can optionally show a different logo for dark theme
-    # darkLogo: /images/sections/experiences/company3.jpg
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
-  positions:
-  - designation: Intern
-    start: Jun 2015
-    end: Jan 2016
-    responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - Architected and implemented core features for a multi-service platform, including Beeda Wallet, RideShar-
+      ing, Beedamall, Grocery, Courier, Pharmacy, Loans, and Spa etc, creating a comprehensive super app that consolidates multiple services into a single, user-friendly interface.
+    - Integrated and customized Google Maps to accurately display the real-time status of users and drivers,
+      implemented efficient routing and animated polylines. Developed custom UI components using UIKit to
+      provide a seamless interface. Reduced the app’s crash rate by 30% through testing and debugging using
+      Instruments..
+    - Engineered optimizations in the Beeda app, leading to a measurable decrease in CPU usage by refining
+      algorithms, optimizing threading strategies, and implementing effective caching mechanisms, resulting in
+      improved performance and battery efficiency.
+
+# - company:
+#     name: Intern Counting Company (ICC).
+#     url: "https://www.example.com"
+#     location: Intern Land
+#     logo: /images/sections/experiences/company3.jpg
+#     # Can optionally show a different logo for dark theme
+#     # darkLogo: /images/sections/experiences/company3.jpg
+#     overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+#   positions:
+#   - designation: Intern
+#     start: Jun 2015
+#     end: Jan 2016
+#     responsibilities:
+#     - Count lost of interns.
+#     - Count more interns.
+#     - Count me as an intern.
