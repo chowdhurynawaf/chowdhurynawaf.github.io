@@ -15,7 +15,7 @@ degrees:
   timeframe: 2016-2021
   institution:
     name: National University
-    url: "https://dhakacitycollege.edu.bd/"
+    url: "https://www.nu.ac.bd"
     logo: /images/sections/education/nu.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/tech_college.png
@@ -35,7 +35,6 @@ degrees:
   timeframe: 2013-2015
   institution:
     name: Government Science College
-    url: "#"
     logo: /images/sections/education/gsc.jpeg
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/education/science_college.png

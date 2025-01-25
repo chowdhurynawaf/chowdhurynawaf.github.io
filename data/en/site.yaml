@@ -1,5 +1,5 @@
 # Copyright Notice
-copyright: © 2025 Copyright.
+copyright: © 2023-2025 Copyright.
 
 # A disclaimer notice for the footer. Make sure you have set "params.footer.disclaimer.enable: true" in your `config.yaml` file.
 disclaimer: "This website uses Google Analytics with cookies for access analysis."
@@ -13,7 +13,7 @@ customMenus:
 - name: Docs
   url: https://toha-guides.netlify.app/posts/
   # specify whether to hide the menu item from top navbar or not.
-  hideFromNavbar: false
+  hideFromNavbar: true
   # specify whether to show the menu item in footer or not.
   # if you set it to true, make sure you have set `footer.navigation.customMenus: true` in your config.yaml
   showOnFooter: false
