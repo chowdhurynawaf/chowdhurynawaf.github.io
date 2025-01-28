@@ -1,1 +1,0 @@
-Portfolio site in both japanese and English
