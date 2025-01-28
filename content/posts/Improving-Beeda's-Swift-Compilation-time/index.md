@@ -1,71 +1,70 @@
 ---
-title: "Improving Beeda's Swift Compilation times by 83%"
+title: "BeedaのSwiftコンパイル時間を83％改善"
 date: 2023-02-09T08:01:47+06:00
-description: Beeda achieved a remarkable 83% reduction in Swift compilation times, optimizing development workflows. This enhancement boosts efficiency, saving valuable time for developers.
+description: Beedaは、Swiftのコンパイル時間を83％も削減し、開発ワークフローを最適化することに成功しました。この改善により、開発者の効率が向上し、貴重な時間を節約できます。
+hero: images/site/bsup.jpg
 menu:
   sidebar:
-    name: Improving Beeda's Swift Compilation times by 83%
+    name: BeedaのSwiftコンパイル時間を83％改善
     identifier: bc
     weight: 3
 tags: ["Beeda", "Optimisation"]
 categories: ["basic"]
 ---
 
-## Context
+## コンテキスト
 
-As Beeda expanded with new features, compile times began to pose a serious challenge. A simple change or full compilation took around 11 minutes, slowing down our workflow significantly.  
+Beedaが新しい機能で拡張する中で、コンパイル時間が深刻な課題となり始めました。ちょっとした変更やフルコンパイルでも約11分かかり、ワークフローが大幅に遅れていました。
 
-To enhance productivity and streamline development, we aimed to drastically reduce this compile time. In this article, I’ll walk you through how we successfully brought it down to just 2 minutes.  
+生産性を向上させ、開発の効率を改善するために、このコンパイル時間を劇的に短縮することを目指しました。この記事では、どのようにしてコンパイル時間を2分にまで短縮したかを紹介します。
 
-## Optimization Levels in Xcode  
+## Xcodeの最適化レベル
 
-Xcode provides three optimization levels to choose from:  
-- **None**  
-- **Fast**  
-- **Fast with Whole Module Optimization**  
+Xcodeでは、以下の3つの最適化レベルから選択できます：
+- **なし**
+- **高速**
+- **全モジュール最適化を使用した高速**
 
-Here’s how we leveraged these settings to achieve this improvement. 
+これらの設定を活用して、どのようにこの改善を実現したかを紹介します。
 
 ![image info](/images/site/bc.jpg)
 
-Enabling Whole Module Optimization greatly accelerates the compilation process. However, selecting the Fast or Fast with Whole Module Optimization settings disables debugging functionality. After choosing one of these options and compiling the app, attempting to debug results in the following message in the console:
+「全モジュール最適化」を有効にすることで、コンパイルプロセスが大幅に加速されます。しかし、「高速」または「全モジュール最適化を使用した高速」設定を選択すると、デバッグ機能が無効になります。これらのオプションのいずれかを選択し、アプリをコンパイルした後にデバッグを試みると、コンソールに次のメッセージが表示されます：
 
-> App was compiled with optimization - stepping may behave oddly; variables may not be available.
-
-
+> アプリは最適化されてコンパイルされました - ステッピングは異常に動作する可能性があり、変数が利用できないことがあります。
 
 ---
 
-## Solution: Add a User-Defined Setting
-To enable full module optimization, you’ll need to manually add a **User-Defined Setting** in your Xcode project configuration. Here’s how you can do it:
+## 解決策：ユーザー定義設定を追加する
+全モジュール最適化を有効にするには、Xcodeプロジェクトの設定に**ユーザー定義設定**を手動で追加する必要があります。以下はその方法です：
 
 ---
 
-### Steps
+### 手順
 
+1. **プロジェクト設定に移動**：
+   - プロジェクトナビゲータでプロジェクトを選択します。
+   - **ビルド設定**タブに移動します。
 
-
-1. **Navigate to Project Settings**:
-   - In the Project Navigator, select your project.
-   - Go to the **Build Settings** tab.
-
-2. **Add a User-Defined Setting**:
+2. **ユーザー定義設定を追加**：
 
    ![image info](/images/site/ol.jpg)
    ---
 
    ![image info](/images/site/mo.jpg)
 
-   - Click the **+** button in the top-left corner of the Build Settings pane.
-   - Select **Add User-Defined Setting**.
-   - Name the setting `SWIFT_WHOLE_OPTIMIZATION_LEVEL` (or another relevant name).
-   - Set its value to `YES` to enable full module optimization.
+   - ビルド設定ペインの左上隅にある**+**ボタンをクリックします。
+   - **ユーザー定義設定の追加**を選択します。
+   - 設定名を`SWIFT_WHOLE_OPTIMIZATION_LEVEL`（または他の関連する名前）にします。
+   - 値を`YES`に設定して、全モジュール最適化を有効にします。
    ---
-3. **Set None in Debug configuration**
-   - From target build settings set Optimization Level to None in Debug configuration
+
+3. **Debug設定でNoneを設定**  
+   - ターゲットのビルド設定で、Debug設定の最適化レベルを**None**に設定します。
+
+### この改善がBeedaに与える影響
+
+コードを頻繁に更新し、反復しているiOSチームにとって、この改善は**効率の向上**、**コストの削減**、**顧客体験の向上**に大きな役割を果たしています。具体的に言うと、1日30回のコンパイルを実行する場合、この最適化は**1日に約26時間のコンパイル時間**を節約します。この時間の節約は、**3人の追加の開発者**のアウトプットと同じくらいの効果があります。
 
 
 
-### How Does This Impact Beeda?
-
-For our iOS team, which frequently updates and iterates on our code, this enhancement plays a significant role in improving **efficiency**, **reducing costs**, and **enhancing the customer experience**. To put it into perspective, if we run 30 compilations each day, this optimization saves us roughly **26 hours of compilation time per day**. This time savings is akin to having the output of **three extra developers** on the team.
