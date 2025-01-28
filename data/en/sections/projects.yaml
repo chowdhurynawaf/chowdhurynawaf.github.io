@@ -22,7 +22,7 @@ projects:
 - name: Beeda User
   logo: /images/sections/projects/blogo.png
   image: /images/sections/projects/beeda.jpg
-  role: Developer
+  role: iOS Engineer
   timeline: "May 2021 - March 2022"
   repo: https://apps.apple.com/us/app/beeda-the-everything-mega-app/id1641292802
   summary: Beeda Mega App is an AI powered, on demand platform that offers 50+ on demand solutions, including food and product delivery, transportation services, digital payments, multi-vendor e-commerce, entertainment, travel, real estate, jobs, places, digital business cards, social media, car-related services, and much more
@@ -31,7 +31,7 @@ projects:
 - name: Beeda Driver
   logo: /images/sections/projects/bdriver.png
   image: /images/sections/projects/bdrive.jpg
-  role: Developer
+  role: iOS Engineer
   timeline: "May 2021 - March 2022"
   repo: https://apps.apple.com/us/app/beeda-driver-drive-deliver/id1668654306
   summary: The Beeda Driver App is a powerful delivery and logistics platform designed to help drivers manage orders, optimize routes, and track earnings effortlessly. With real-time notifications, GPS navigation, and seamless customer communication, it ensures smooth and efficient deliveries. Drivers can easily sign up, submit required documents, and start accepting orders. Tailored for regions like Ethiopia or India, the app empowers drivers to maximize productivity and income. Welcome to smarter, faster deliveries with Beeda Driver App! 🚚
@@ -40,7 +40,7 @@ projects:
 - name: eyParent
   logo: /images/sections/projects/eyparent.png
   image: /images/sections/projects/eypar.png
-  role: Developer
+  role:  iOS Engineer
   timeline: "April 2022 - Present"
   repo: https://apps.apple.com/gb/app/eyparent/id976010368
   summary: eyparent is a dedicated app that aims to engage parents and help them to understand their child’s development on a more regular and real-time basis, through their child’s learning journey. Nurseries can keep parents informed and involved with comments, home observations, daily diaries, reports, accident/incident sheets and messages. When integrated with eymanage and payment gateways, parents also have a full overview of their account and can view and pay invoices online
@@ -49,7 +49,7 @@ projects:
 - name: eyEmployee
   logo: /images/sections/projects/eyEm.png
   image: /images/sections/projects/eyEmp.png
-  role: Developer
+  role: iOS Engineer
   timeline: "April 2022 - Present"
   repo: https://apps.apple.com/gb/app/eyemployee/id6475674242
   summary: eyemployee mobile app enables childcare providers to create a bridge between nursery owners, HR managers and all employees for a seamless HR experience for the entire workforce.In order to use this app, your organisation should have subscribed to one or more products with us (eyworks).Engage your staff team and make HR more convenient by bringing their work life together in one easy on the go app.Empower your nursery team with instant access to all the information they need to do the best job possible. Enable staff to view shifts, get updates and effortlessly request time off, promoting a happier and more efficient workforce.
@@ -58,7 +58,7 @@ projects:
 - name: eyLog
   logo: /images/sections/projects/eyparent.png
   image: /images/sections/projects/eyl.jpeg
-  role: Developer
+  role: iOS Engineer
   timeline: "April 2022 - Present"
   repo: https://apps.apple.com/gb/app/eylog/id980570119
   summary: For Every Young Hero’s Story! Celebrate the magic of early childhood development with Eylog, the ultimate app for nursery professionals and caregivers. Designed to capture every milestone, learning journey, and special moment, Eylog makes it easy to create and share diary entries, observations, and progress reports. Stay connected to the growth and achievements of the little ones in your care, ensuring no precious moment is ever missed
@@ -67,7 +67,7 @@ projects:
 - name: J-Lingo
   logo: /images/sections/projects/JLL.png
   image: /images/sections/projects/JL.jpg
-  role: Developer
+  role: iOS Engineer
   timeline: "Aug 2024 - Sep 2024"
   repo: https://www.youtube.com/watch?v=H2zt-_bt05s&t=28s
   summary: J-Lingo is a mock-up app created while learning Japanese at B-JET, designed to simplify and organize the lives of trainees. It offers features like Learning Resource Management, Daily/Weekly Quizzes, Online Class Records, and Practice Tests to enhance learning. Interactive elements such as Games, Leaderboards, and Forums make the process engaging and collaborative. Trainees can also track progress with Analytics and share achievements via Profile Sharing. J-Lingo aims to make Japanese learning more comfortable, efficient, and enjoyable for every B-JET trainee! 🌟

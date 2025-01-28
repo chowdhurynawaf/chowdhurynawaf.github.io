@@ -20,7 +20,7 @@ experiences:
     # company overview
     
   positions:
-  - designation: iOS Developer
+  - designation: iOS Engineer
     start: April 2022
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
@@ -46,7 +46,7 @@ experiences:
     # darkLogo: /images/sections/experiences/company2.jpg
     
   positions:
-  - designation: iOS Developer
+  - designation: iOS Engineer
     start: May 2021
     end: March 2022
     responsibilities:
