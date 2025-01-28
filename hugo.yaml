@@ -31,7 +31,7 @@ languages:
     title: ナワフのブログ
     weight: 2
 # default language for the content
-defaultContentLanguage: en
+defaultContentLanguage: jp
 
 
 # Allow raw html in markdown file
