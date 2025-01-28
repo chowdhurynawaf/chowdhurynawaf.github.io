@@ -1,6 +1,6 @@
 # section information
 section:
-  name: Education
+  name: 学歴
   id: education
   template: sections/education.html # Use "sections/education-alt.html for alternate template.
   enable: true
@@ -12,7 +12,7 @@ section:
 degrees:
 - name: Bsc in Computer Science & Engineering
   icon: fa-graduation-cap
-  timeframe: 2016-2021
+  timeframe: 2016年 - 2021年
   institution:
     name: National University
     url: "https://www.nu.ac.bd"
@@ -25,10 +25,9 @@ degrees:
     outOf: 4
   
   extracurricularActivities: #(optional)
-  - As a Mozilla volunteer, I contributed to the Quality Assurance (QA) team by triaging bugs prior to releases
-  - Reviewing and categorizing incoming bug reports to ensure they were assigned to the correct components and had clear reproduction steps
-  -  Collaborating with the community during scheduled Bug Days to collectively address and manage bug lists, enhancing the efficiency of the triage process
-
+  - Mozillaのボランティアとして、リリース前のバグトリアージに貢献し、Quality Assurance（QA）チームに参加。
+  - 受信したバグレポートをレビューし、カテゴリ分けを行い、適切なコンポーネントに割り当て、再現手順を明確にすることで品質向上に努めた。
+  - コミュニティと協力し、定期的なBug Daysに参加してバグリストを共同で対応・管理し、トリアージプロセスの効率を向上。
 
 - name: Higher Secondary School Certificate
   icon: fa-university

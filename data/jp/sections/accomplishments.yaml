@@ -1,6 +1,6 @@
 # section information
 section:
-  name: Accomplishments
+  name: 実績
   id: accomplishments
   enable: true
   weight: 9
@@ -16,7 +16,7 @@ accomplishments:
   organization:
     name: B-Jet
     url: https://www.facebook.com/bjet.org/
-  courseOverview: B-JET (Bangladesh-Japan ICT Engineers' Training Program) is a collaborative initiative between Bangladesh and Japan aimed at enhancing the skills of Bangladeshi IT engineers and creating opportunities for them to work in Japan's tech industry. The program addresses Japan's growing demand for skilled IT professionals while providing Bangladeshi engineers with advanced training, Japanese language skills, and cultural exposure to prepare them for the Japanese job market.
+  courseOverview: B-JET（バングラデシュ-日本 ICT エンジニア育成プログラム）**は、バングラデシュと日本の協力による取り組みで、バングラデシュのITエンジニアのスキル向上を図り、日本の技術産業で働く機会を創出することを目的としています。このプログラムは、日本における熟練IT専門家の需要の増加に対応するとともに、バングラデシュのエンジニアに対して、日本の求人市場に向けた高度なトレーニング、日本語スキル、および文化的な理解を提供します。
   certificateURL: "https://drive.google.com/file/d/1u5FCwA8xwq7fKnpghFumiNA7-uNPVg3C/view?usp=sharing"
 
 # - name: Machine Learning

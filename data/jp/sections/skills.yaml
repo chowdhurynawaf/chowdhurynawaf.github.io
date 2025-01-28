@@ -1,6 +1,6 @@
 # section information
 section:
-  name: Skills
+  name: スキル
   id: skills
   enable: true
   weight: 4
@@ -29,50 +29,50 @@ skills:
 
 - name: Swift
   logo: /images/sections/skills/swift.png
-  summary: "Using as the main language for professional development. Capable of writing scalable, testable, and maintainable program."
+  summary: "プロフェッショナルな開発の主要言語として使用。スケーラブルでテスト可能、かつ保守性の高いプログラムを書くことが可能。"
   categories: ["basic", "language"]
   url: "https://swift.org/"
 
 - name: Objective-C
   logo: /images/sections/skills/objc.png
-  summary: "Used for legacy codebase. Capable of writing Objective-C code. Using as the primary language for professional development"
+  summary: "レガシーコードベースでの使用。Objective-Cのコードを書くことが可能。プロフェッショナルな開発の主要言語として使用。"
   categories: ["basic", "language"]
   url: "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html"
 
 - name: C++
   logo: /images/sections/skills/c++.png
-  summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+  summary: "QTフレームワークを使用して楽しいプロジェクトを作成。競技プログラミングや問題解決のために使用。"
   categories: ["basic", "language"]
 
 
 - name: Python
   logo: /images/sections/skills/python.png
-  summary: "Used for contest programming and problem solving, automation."
+  summary: "競技プログラミング、問題解決、および自動化のために使用。"
   categories: ["language"]
   url: "https://www.python.org/"
 
 - name: Linux
   logo: /images/sections/skills/linux.png
-  summary: "Using as the secondary operating system. Capable of writing bash/shell scripts."
+  summary: "セカンダリオペレーティングシステムとして使用。Bash/シェルスクリプトを書くことが可能。"
   categories: ["others"]
 
 
 - name: Shell Scripting
   logo: /images/sections/skills/bash.png
-  summary: "Capable of writing bash/shell scripts. Used for automation, CI/CD."
+  summary: "Bash/シェルスクリプトを書くことが可能。自動化やCI/CDに使用。"
   categories: ["others"]
 
 
 - name: Docker
   logo: /images/sections/skills/docker.svg
-  summary: "Write most of the programs as dockerized container. Experienced with multi-stage, multi-arch build process."
+  summary: "ほとんどのプログラムをDockerコンテナとして作成。マルチステージ、マルチアーキテクチャのビルドプロセスに精通。"
   categories: ["container"]
   url: "https://www.docker.com/"
 
 
 - name: Kubernetes
   logo: /images/sections/skills/kubernetes.png
-  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+  summary: "Kubernetes上でのアプリケーションのデプロイおよび管理が可能。CRDのためのKubernetesコントローラーの作成に精通。"
   categories: ["container"]
   url: "https://kubernetes.io/"
 

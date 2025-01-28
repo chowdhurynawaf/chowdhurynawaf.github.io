@@ -3,7 +3,7 @@ section:
   name: Experiences
   id: experiences
   enable: true
-  weight: 3
+  weight: 2
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true 
@@ -27,7 +27,7 @@ experiences:
     # give some points about what was your responsibilities at the company.
     responsibilities:
     - Took ownership, maintained and developed features across two interconnected 12-year-old legacy iOS
-      codebases eyLog and eyParent ensuring seamless integration and functionality between applications.
+      codebases [eyLog](https://apps.apple.com/gb/app/eylog/id980570119) and [eyParent](https://apps.apple.com/gb/app/eyparent/id976010368) ensuring seamless integration and functionality between applications.
     - Collaborated with cross-functional teams to design and implement key features such as the upload queue,
       custom frameworks, offline observation, add to observation, and the rewrite of the medicine form and
       accident sheets with signature functionality for both eylog and eyparent apps, using XIBs and Objective-C
@@ -50,7 +50,7 @@ experiences:
     start: May 2021
     end: March 2022
     responsibilities:
-    - Developed a visually striking, high-performance mobile app with seamless user experience that secured $1
+    - Developed a visually striking, high-performance mobile app called [Beeda](https://apps.apple.com/us/app/beeda-the-everything-mega-app/id1641292802) with seamless user experience that secured $1
       million in venture capital funding for the startup, driving significant business growth.
 
     - Architected and implemented core features for a multi-service platform, including Beeda Wallet, RideShar-

@@ -1,6 +1,6 @@
 # section information
 section:
-  name: About
+  name: について
   id: about
   enable: true
   weight: 1
@@ -8,10 +8,10 @@ section:
   template: sections/about.html
 
 # your designation
-designation: iOS Engineer 
+designation: iOSエンジニア 
 # your company information
 company:
-  name: METADESIGN SOLUTIONS.
+  name: METADESIGN SOLUTIONS
   url: "https://metadesignsolutions.com/"
 
 # your resume. this file path should be relative to you "static" directory
@@ -19,7 +19,8 @@ company:
 # resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'Experienced iOS Developer , not your traditional one 😇 with a demonstrated history of working in Mobile development with 3+ years of working experience. Love to analyze, understand and communicate thoroughly before diving into coding . Recently got addicted to open source projects. '
+summary: '経験豊富なiOS開発者ですが、従来の開発者とは少し違います 😇。
+<br>3年以上のモバイル開発の実績があり、コーディングに取り掛かる前に、分析、理解、そして徹底的なコミュニケーションを取ることを大切にしています。最近はオープンソースプロジェクトに夢中です。'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.

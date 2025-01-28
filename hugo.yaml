@@ -105,17 +105,20 @@ params:
         facebook: true
         twitter: true
         linkedin: true
-        reddit: true
-        whatsapp: true
-        email: true
-        tumblr: true
-        pocket: true
-        diaspora: true
-        mastodon: true
+        reddit: false
+        whatsapp: false
+        email: false
+        tumblr: false
+        pocket: false
+        diaspora: false
+        mastodon: false
 
     # Enable & configure "Notes" features
     notes:
       enable: false
+
+    post:
+      enable: true
 
     # Enable comment feature. There, should be only one of them.
     comment:

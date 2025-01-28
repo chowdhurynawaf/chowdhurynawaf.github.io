@@ -1,0 +1,21 @@
+# some information about you
+name: "Mahmuduzzaman Chowdhury"
+nickname: "ナワフ"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+image: "images/author/nawaf.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "chowdhurynawaf@gmail.com"
+  phone: "+880 1683438238"
+  linkedin: "nawafchowdhury"
+  
+  
+
+# some summary about what you do
+summary:
+  - 私はiOSエンジニアです。
+  - 自動化が大好きです。
+  - Bashが大好きです。
+  - オープンソースプロジェクトに取り組んでいます。
+  - 楽しいプロジェクトに携わるのが好きです。
