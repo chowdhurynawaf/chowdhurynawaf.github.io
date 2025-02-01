@@ -1,6 +1,6 @@
 baseURL: https://chowdhurynawaf.github.io/
-languageCode: bn
-title: "Nawaf's Blog"
+languageCode: jp
+title: "Nawaf's Portfolio"
 
 # Use Hugo modules to add theme
 module:
@@ -22,12 +22,12 @@ languages:
   en:
     languageCode: en
     languageName: English
-    title: "Nawaf's Blog"
+    title: "Nawaf's Portfolio"
     weight: 1
   jp:
     languageCode: jp
     languageName: 日本語
-    title: ナワフのブログ
+    title: Nawafのポートフォリオ
     weight: 2
 # default language for the content
 defaultContentLanguage: jp

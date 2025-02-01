@@ -20,7 +20,7 @@ customMenus:
 
 # Specify OpenGraph Headers
 openGraph:
-  title: Nawaf's Blog
+  title: Nawaf's Portfolio
   type: website
   description: Portfolio and personal blog of Nawaf.
   image: images/author/nawaf.png
