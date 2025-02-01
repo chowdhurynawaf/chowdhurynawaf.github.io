@@ -65,8 +65,8 @@ projects:
   tags: ["professional"]
 
 - name: J-Lingo
-  logo: /images/sections/projects/JLL.png
-  image: /images/sections/projects/JL.jpg
+  logo: /images/sections/projects/jLL.png
+  image: /images/sections/projects/jL.jpg
   role: iOS Engineer
   timeline: "Aug 2024 - Sep 2024"
   repo: https://www.youtube.com/watch?v=H2zt-_bt05s&t=28s
