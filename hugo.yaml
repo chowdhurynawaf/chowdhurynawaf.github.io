@@ -161,8 +161,8 @@ params:
         google:
           id: G-EGJD9MG8HB
         # # CounterDev
-        # counterDev:
-        #   id: <your counterdev id>
+        counterDev:
+          id: 3e099f47-9c07-404d-8db7-ae3b3e8e0794
         # # GoatCounter
         # goatCounter:
         #   code: <your goat counter code>
