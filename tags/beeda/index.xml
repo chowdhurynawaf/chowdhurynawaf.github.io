@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Beeda on Nawafのポートフォリオ</title><link>https://chowdhurynawaf.github.io/tags/beeda/</link><description>Recent content in Beeda on Nawafのポートフォリオ</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sat, 20 Jan 2024 08:01:10 +0600</lastBuildDate><atom:link href="https://chowdhurynawaf.github.io/tags/beeda/index.xml" rel="self" type="application/rss+xml"/><item><title>Beedaにおけるキャッシュ管理戦略の最適化</title><link>https://chowdhurynawaf.github.io/posts/cache-management-strategy-in-beeda/</link><pubDate>Sat, 20 Jan 2024 08:01:10 +0600</pubDate><guid>https://chowdhurynawaf.github.io/posts/cache-management-strategy-in-beeda/</guid><description>&lt;p>高速でシームレスなユーザー体験を提供するためには、すべてのアプリケーションに効果的なキャッシュシステムが必要です。キャッシュがない場合、アセットを繰り返しダウンロードすることで大量のリソースが消費され、読み込み時間が遅延する可能性があります。この問題を解決するために、開発者はパフォーマンスを向上させ、遅延を最小限に抑えるために、&lt;strong>ディスクキャッシュ&lt;/strong>、&lt;strong>LRU（Least Recently Used）キャッシュ&lt;/strong>、&lt;strong>データベースキャッシュ&lt;/strong>など、さまざまなキャッシュ戦略を利用します。&lt;/p>
+&lt;hr>
+&lt;h3 id="問題">問題:&lt;/h3>
+&lt;p>&lt;strong>Beeda User&lt;/strong>アプリでは、画像、Lottieアニメーション、ビデオといったメディアアセットを効果的に扱うことが、高速でシームレスなユーザー体験を実現するために不可欠でした。それぞれのメディアアセットには、キャッシュや最適化に関する特有のニーズと課題があります。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>画像&lt;/strong>: 高解像度の画像は大量のメモリとストレージを消費する可能性があるため、&lt;strong>ディスクキャッシュ&lt;/strong>（例: &lt;code>URLCache&lt;/code>やSDWebImageのようなサードパーティライブラリを使用）が重要です。&lt;/li>
+&lt;li>&lt;strong>Lottieアニメーション&lt;/strong>: Lottieファイル（JSONベースのアニメーション）は軽量ですが、効率的なパースとレンダリングが求められます。&lt;strong>インメモリキャッシュ&lt;/strong>（例: &lt;code>NSCache&lt;/code>）を使用することで、繰り返しパースする際の負荷を軽減できます。&lt;/li>
+&lt;li>&lt;strong>ビデオ&lt;/strong>: ビデオはサイズが大きいため、&lt;strong>ストリーミング&lt;/strong>や&lt;strong>部分的なキャッシュ&lt;/strong>が必要で、過剰なメモリやストレージの使用を防ぎます。&lt;/li>
+&lt;/ul>
+&lt;p>各キャッシュ機構が特定のメディアタイプに対して効果的である一方で、次のような重要な課題が浮かび上&lt;/p>
+&lt;hr>
+&lt;h3 id="実装">実装:&lt;/h3>
+&lt;p>&lt;img src="https://chowdhurynawaf.github.io/images/site/dg.jpg" alt="image info">&lt;/p>
+&lt;p>&lt;strong>Beeda User&lt;/strong>アプリにおけるメディアアセット管理の課題に対処するため、各タイプに応じた異なるユーティリティ（Utils）を設計しました。この構造化されたアプローチにより、画像、Lottieアニメーション、ビデオなどのアセットを効率的に処理できます。&lt;/p>
+&lt;h3 id="1-ユーティリティレイヤー-utils-layer">1. &lt;strong>ユーティリティレイヤー (Utils Layer)&lt;/strong>&lt;/h3>
+&lt;p>各メディアアセットタイプには、それぞれのタスク（ダウンロード、パース、処理など）を担当する&lt;strong>ユーティリティクラス&lt;/strong>があります。これらのユーティリティは、アプリが直接操作することなく、&lt;strong>アセットマネージャー&lt;/strong>からアセットを取得する中間役として機能します。&lt;/p>
+&lt;p>例えば、&lt;strong>画像ユーティリティ&lt;/strong>を考えてみましょう。もし画像がすでにキャッシュされていなければ、このユーティリティはアセットマネージャーの&lt;code>getData&lt;/code>メソッドを呼び出して画像をダウンロードします。ダウンロードが完了すると、ユーティリティは生データをアセットマネージャーに渡して保存します。&lt;/p>
+&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-swift" data-lang="swift">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">protocol&lt;/span> &lt;span style="color:#a6e22e">ImageUtilProtocol&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">downloadImage&lt;/span>(url: String, imageCompletionHandler: ((UIImage) -&amp;gt; Void)?, storageType: StorageType)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="2-アセットマネージャー-assets-manager">2. &lt;strong>アセットマネージャー (Assets Manager)&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>アセットマネージャー&lt;/strong>はシステム内の&lt;strong>中間レイヤー&lt;/strong>として機能し、&lt;strong>ユーティリティ（Utils）&lt;strong>とさまざまな&lt;/strong>キャッシュメカニズム&lt;/strong>の間のブリッジとして働きます。主な役割は、指定された&lt;strong>ストレージタイプ&lt;/strong>に基づいて、どのキャッシュ方式を使用するかを決定することです。&lt;/p>
+&lt;p>&lt;code>StorageType&lt;/code>パラメータは、利用可能なキャッシュメカニズム（例: インメモリ、ディスク、ハイブリッドなど）を定義します。&lt;/p>
+&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-swift" data-lang="swift">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">enum&lt;/span> &lt;span style="color:#a6e22e">StorageType&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> lru(LRUCacheType)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> disk
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-swift" data-lang="swift">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">enum&lt;/span> &lt;span style="color:#a6e22e">LRUCacheType&lt;/span>: String {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> lottie
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> image
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> video
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;p>アセットマネージャーには、データを保存および取得するための共通メソッドがあります。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-swift" data-lang="swift">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">protocol&lt;/span> &lt;span style="color:#a6e22e">AssetsManagerProtocol&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">writeData&lt;/span>(data: Data, forKey key: String, storageType: StorageType)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">readData&lt;/span>(forKey key: String, storageType: StorageType) -&amp;gt; Data?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">removeData&lt;/span>(forKey key: String, storageType: StorageType)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>アセットマネージャーは、キャッシュ操作の管理において重要な役割を果たします。ユーティリティクラスがそのメソッドを呼び出すと、アセットマネージャーは&lt;code>storageType&lt;/code>に基づいて適切なキャッシュレイヤーを決定します。その後、データの書き込み、読み取り、または削除といったタスクを該当するキャッシュメカニズムに委任し、効率的かつ正確にアセットを処理します。&lt;/p></description></item><item><title>BeedaのSwiftコンパイル時間を83％改善</title><link>https://chowdhurynawaf.github.io/posts/improving-beedas-swift-compilation-time/</link><pubDate>Thu, 09 Feb 2023 08:01:47 +0600</pubDate><guid>https://chowdhurynawaf.github.io/posts/improving-beedas-swift-compilation-time/</guid><description>&lt;h2 id="コンテキスト">コンテキスト&lt;/h2>
+&lt;p>Beedaの新機能拡張に伴い、コンパイル時間が深刻な問題となってきました。些細な変更やフルコンパイルに約11分もかかるため、開発ワークフローに大幅な遅延が生じていました。&lt;/p>
+&lt;p>生産性を向上させ、開発の効率を改善するために、このコンパイル時間を劇的に短縮することを目指しました。この記事では、どのようにしてコンパイル時間を2分にまで短縮したかを紹介します。&lt;/p>
+&lt;h2 id="xcodeの最適化レベル">Xcodeの最適化レベル&lt;/h2>
+&lt;p>Xcodeでは、以下の3つの最適化レベルから選択できます：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>なし&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>高速&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>全モジュール最適化を使用した高速&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>これらの設定を活用して、どのようにこの改善を実現したかを紹介します。&lt;/p>
+&lt;p>&lt;img src="https://chowdhurynawaf.github.io/images/site/bc.jpg" alt="image info">&lt;/p>
+&lt;p>「全モジュール最適化」を有効にすることで、コンパイルプロセスが大幅に加速されます。しかし、「高速」または「全モジュール最適化を使用した高速」設定を選択すると、デバッグ機能が無効になります。これらのオプションのいずれかを選択し、アプリをコンパイルした後にデバッグを試みると、コンソールに次のメッセージが表示されます：&lt;/p>
+&lt;blockquote>
+&lt;p>アプリは最適化されてコンパイルされました - ステッピングは異常に動作する可能性があり、変数が利用できないことがあります。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="解決策ユーザー定義設定を追加する">解決策：ユーザー定義設定を追加する&lt;/h2>
+&lt;p>全モジュール最適化を有効にするには、Xcodeプロジェクトの設定に&lt;strong>ユーザー定義設定&lt;/strong>を手動で追加する必要があります。以下はその方法です：&lt;/p>
+&lt;hr>
+&lt;h3 id="手順">手順&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>プロジェクト設定に移動&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>プロジェクトナビゲータでプロジェクトを選択します。&lt;/li>
+&lt;li>&lt;strong>ビルド設定&lt;/strong>タブに移動します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ユーザー定義設定を追加&lt;/strong>：&lt;/p>
+&lt;h2 id="image-infoimagessiteoljpg">&lt;img src="https://chowdhurynawaf.github.io/images/site/ol.jpg" alt="image info">&lt;/h2>
+&lt;p>&lt;img src="https://chowdhurynawaf.github.io/images/site/mo.jpg" alt="image info">&lt;/p>
+&lt;ul>
+&lt;li>ビルド設定ペインの左上隅にある**+**ボタンをクリックします。&lt;/li>
+&lt;li>&lt;strong>ユーザー定義設定の追加&lt;/strong>を選択します。&lt;/li>
+&lt;li>設定名を&lt;code>SWIFT_WHOLE_OPTIMIZATION_LEVEL&lt;/code>（または他の関連する名前）にします。&lt;/li>
+&lt;li>値を&lt;code>YES&lt;/code>に設定して、全モジュール最適化を有効にします。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Debug設定でNoneを設定&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>ターゲットのビルド設定で、Debug構成の最適化レベルをNoneに設定します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="この改善がbeedaに与える影響">この改善がBeedaに与える影響&lt;/h3>
+&lt;p>コードを頻繁に更新し、反復しているiOSチームにとって、この改善は&lt;strong>効率の向上&lt;/strong>、&lt;strong>コストの削減&lt;/strong>、&lt;strong>顧客体験の向上&lt;/strong>に大きな役割を果たしています。具体的に言うと、1日30回のコンパイルを実行する場合、この最適化は&lt;strong>1日に約26時間のコンパイル時間&lt;/strong>を節約します。この時間の節約は、&lt;strong>3人の追加の開発者&lt;/strong>のアウトプットと同じくらいの効果があります。&lt;/p></description></item></channel></rss>
